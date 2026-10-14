@@ -3,7 +3,7 @@ extends Node3D
 const PLAYER_SCRIPT = preload("res://Player.gd")
 const ENEMY_SCRIPT = preload("res://Enemy.gd")
 
-var player: CharacterBody3D
+var player
 var enemies_left := 5
 var game_over := false
 var hp_label: Label
