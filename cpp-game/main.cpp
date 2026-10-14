@@ -168,7 +168,7 @@ int main() {
             (int)std::count_if(enemies.begin(), enemies.end(),
                 [](const Enemy& e) { return e.alive; })), 28, 82, 18, RAYWHITE);
 
-        DrawText("WASD/Arrows: Move   Mouse: Aim   Left click: Shoot   R: Reload",
+        DrawText("WASD/Arrows: Move   Crosshair: Aim   Left click: Shoot   R: Reload",
                  18, screenHeight - 34, 18, RAYWHITE);
         DrawText(TextFormat("Safe zone radius: %i", (int)zoneRadius),
                  screenWidth - 250, 20, 18, DARKBLUE);
