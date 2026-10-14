@@ -1,0 +1,21 @@
+; Godot Engine project configuration
+; Open this folder in Godot 4.x Android Editor or desktop editor.
+config_version=5
+
+[application]
+config/name="Offline Battle Mobile"
+run/main_scene="res://Main.tscn"
+
+[display]
+window/size/viewport_width=960
+window/size/viewport_height=540
+window/stretch/mode="canvas_items"
+
+[rendering]
+renderer/rendering_method="mobile"
+renderer/rendering_method.mobile="mobile"
+textures/default_filters/use_nearest_mipmap_filter=false
+environment/defaults/default_clear_color=Color(0.48, 0.72, 0.9, 1)
+
+[physics]
+3d/default_gravity=9.8
