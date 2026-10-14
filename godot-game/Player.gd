@@ -52,12 +52,14 @@ func _make_player_visuals() -> void:
     spring.name = "CameraArm"
     spring.spring_length = 6.5
     spring.position = Vector3(0, 2.8, 0)
-    spring.rotation_degrees.x = -12.0
+    spring.rotation_degrees.x = 12.0
+    spring.rotation_degrees.y = 180.0
     add_child(spring)
 
     camera = Camera3D.new()
     camera.current = true
     camera.fov = 72.0
+    camera.rotation_degrees.y = 180.0
     spring.add_child(camera)
 
     var gun := MeshInstance3D.new()
@@ -118,9 +120,9 @@ func _physics_process(delta: float) -> void:
         var target_yaw := atan2(-direction.x, -direction.z)
         rotation.y = lerp_angle(rotation.y, target_yaw, minf(1.0, delta * 8.0))
 
-    if Input.is_action_just_pressed("fire") or Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+    if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
         fire()
-    if Input.is_action_just_pressed("reload") or Input.is_key_pressed(KEY_R):
+    if Input.is_key_pressed(KEY_R):
         start_reload()
 
 func fire() -> void:
