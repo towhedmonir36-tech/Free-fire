@@ -88,7 +88,7 @@ int main() {
                 for (Enemy& enemy : enemies) {
                     if (!enemy.alive) continue;
                     RayCollision hit = GetRayCollisionSphere(
-                        shotRay, enemy.position + Vector3{0.0f, 1.0f, 0.0f}, 0.85f);
+                        shotRay, Vector3Add(enemy.position, Vector3{0.0f, 1.0f, 0.0f}), 0.85f);
                     if (hit.hit) {
                         enemy.health -= 50.0f;
                         if (enemy.health <= 0.0f) enemy.alive = false;
@@ -132,7 +132,7 @@ int main() {
         }
 
         // Follow the player from behind. This is a simple fixed third-person camera.
-        camera.target = {player.x, player.y + 1.0f, player.z};
+        camera.target = {player.x, player.y + 1.0f, player.z - 5.0f};
         camera.position = {player.x, player.y + 8.0f, player.z + 12.0f};
 
         BeginDrawing();
